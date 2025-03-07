@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collage de Fotos - Dania Jimena</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#8B5CF6',      // Violeta vibrante
+                        'primary-light': '#A78BFA', // Violeta claro
+                        'secondary': '#EC4899',     // Rosa vibrante
+                        'secondary-light': '#F9A8D4', // Rosa claro
+                        'accent': '#0EA5E9',        // Azul brillante
+                        'dark': '#1E293B',          // Azul oscuro/slate
+                        'light': '#F8FAFC'          // Blanco/slate muy claro
+                    },
+                    animation: {
+                        'fadeIn': 'fadeIn 0.5s ease-in-out',
+                        'zoomIn': 'zoomIn 0.5s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        zoomIn: {
+                            '0%': { transform: 'scale(0.95)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-pink-50 font-['Montserrat'] min-h-screen">
+    <!-- Header moderno -->
+    <header class="relative">
+        <!-- Fondo con gradiente y efecto de cristal -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-90 backdrop-blur-md"></div>
+        
+        <!-- Barra de navegación moderna -->
+        <div class="relative container mx-auto px-4 pt-4">
+            <nav class="flex justify-end">
+                <div class="flex gap-8 backdrop-blur-sm bg-white/10 rounded-full px-6 py-2 shadow-lg">
+                    <a href="index.html" class="text-white font-medium hover:text-secondary-light transition-colors duration-300">Inicio</a>
+                    <a href="collage.html" class="text-white font-medium hover:text-secondary-light transition-colors duration-300">Collage</a>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Contenido del header -->
+        <div class="relative container mx-auto px-6 py-8 md:py-12 flex flex-col items-center">
+            <div class="text-center">
+                <h1 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-white mb-2">
+                    Nuestras Memorias
+                </h1>
+                <h2 class="font-['Playfair_Display'] text-xl md:text-2xl font-medium text-white/90 mb-2">
+                    Dania Jimena Gaona Villalba
+                </h2>
+                <p class="text-white/80 italic">Una colección de momentos especiales</p>
+            </div>
+            
+            <!-- Decoración -->
+            <div class="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        </div>
+    </header>
+
+    <!-- Sección de búsqueda -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-xl mx-auto mb-10">
+            <div class="relative">
+                <input type="text" id="searchInput" placeholder="Buscar recuerdos..." class="w-full px-4 py-3 pl-12 rounded-full shadow-md border border-secondary-light/20 focus:outline-none focus:ring-2 focus:ring-primary">
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="flex flex-wrap gap-3 justify-center mb-10">
+            <button class="filter-btn bg-primary text-white px-4 py-2 rounded-full text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300">Todas</button>
+            <button class="filter-btn bg-white text-primary px-4 py-2 rounded-full text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300">Viajes</button>
+            <button class="filter-btn bg-white text-primary px-4 py-2 rounded-full text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300">Citas</button>
+            <button class="filter-btn bg-white text-primary px-4 py-2 rounded-full text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300">Celebraciones</button>
+            <button class="filter-btn bg-white text-primary px-4 py-2 rounded-full text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300">Momentos especiales</button>
+        </div>
+    </div>
+
+    <!-- Galería estilo Pinterest -->
+    <div class="container mx-auto px-4 pb-20">
+        <div id="gallery" class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+            <!-- Imagen 1 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/700" alt="Foto 1" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">Nuestro primer viaje juntos</p>
+                            <p class="text-white/80 text-sm">Abril 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen 2 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/500" alt="Foto 2" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">Tu sonrisa ilumina mi día</p>
+                            <p class="text-white/80 text-sm">Mayo 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen 3 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/800" alt="Foto 3" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">Celebrando nuestro aniversario</p>
+                            <p class="text-white/80 text-sm">Junio 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen 4 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/600" alt="Foto 4" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">Aventura en la montaña</p>
+                            <p class="text-white/80 text-sm">Julio 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen 5 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/400" alt="Foto 5" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">Cena romántica</p>
+                            <p class="text-white/80 text-sm">Agosto 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen 6 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/650" alt="Foto 6" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">Recuerdos de verano</p>
+                            <p class="text-white/80 text-sm">Septiembre 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen 7 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/550" alt="Foto 7" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">Concierto juntos</p>
+                            <p class="text-white/80 text-sm">Octubre 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen 8 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/500" alt="Foto 8" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">Fiesta de disfraces</p>
+                            <p class="text-white/80 text-sm">Noviembre 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen 9 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/750" alt="Foto 9" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">Navidad en familia</p>
+                            <p class="text-white/80 text-sm">Diciembre 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen 10 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/600" alt="Foto 10" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">Año nuevo juntos</p>
+                            <p class="text-white/80 text-sm">Enero 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen 11 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/450" alt="Foto 11" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">San Valentín</p>
+                            <p class="text-white/80 text-sm">Febrero 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagen 12 -->
+            <div class="photo-item break-inside-avoid rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-fadeIn">
+                <div class="relative group">
+                    <img src="/api/placeholder/500/700" alt="Foto 12" class="w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4 w-full">
+                            <p class="text-white font-medium">Escapada de fin de semana</p>
+                            <p class="text-white/80 text-sm">Marzo 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver fotos en grande -->
+    <div id="photoModal" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center hidden backdrop-blur-sm">
+        <div class="max-w-4xl w-full mx-4">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-2xl">
+                <div class="relative">
+                    <img id="modalImage" src="" alt="Imagen ampliada" class="w-full">
+                    <button id="closeModal" class="absolute top-4 right-4 bg-white/20 backdrop-blur-md hover:bg-white/40 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300">
+                        ✕
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h3 id="modalTitle" class="text-xl font-bold text-primary mb-1"></h3>
+                    <p id="modalDate" class="text-dark/60"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer moderno -->
+    <footer class="relative mt-10">
+        <!-- Fondo con gradiente y efecto de cristal -->
+        <div class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-90"></div>
+        
+        <!-- Contenido del footer -->
+        <div class="relative container mx-auto px-6 py-8 text-center">
+            <p class="font-['Playfair_Display'] text-xl font-bold text-white mb-2">Dania Jimena</p>
+            <p class="text-white/80 max-w-md mx-auto">Cada foto cuenta una historia de nuestro amor</p>
+            <div class="mt-4 text-white/60 text-sm">Collage creado con amor</div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Funcionalidad para el modal
+        const photoItems = document.querySelectorAll('.photo-item');
+        const modal = document.getElementById('photoModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDate = document.getElementById('modalDate');
+        const closeModal = document.getElementById('closeModal');
+        
+        // Abrir modal al hacer clic en una foto
+        photoItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                const title = item.querySelector('.group p:first-child').textContent;
+                const date = item.querySelector('.group p:last-child').textContent;
+                
+                modalImage.src = img.src;
+                modalTitle.textContent = title;
+                modalDate.textContent = date;
+                
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Cerrar modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Cerrar modal al hacer clic fuera de la imagen
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Búsqueda
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            photoItems.forEach(item => {
+                const title = item.querySelector('.group p:first-child').textContent.toLowerCase();
+                const date = item.querySelector('.group p:last-child').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || date.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+        
+        // Funcionalidad para los filtros
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Marcar botón activo
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-white');
+                    btn.classList.add('bg-white', 'text-primary');
+                });
+                
+                button.classList.remove('bg-white', 'text-primary');
+                button.classList.add('bg-primary', 'text-white');
+                
+                // Filtrar imágenes (simulado - puedes implementar la lógica real)
+                const filter = button.textContent.toLowerCase();
+                
+                if (filter === 'todas') {
+                    photoItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                    return;
+                }
+                
+                photoItems.forEach(item => {
+                    const title = item.querySelector('.group p:first-child').textContent.toLowerCase();
+                    
+                    // Lógica simulada - aquí podrías tener categorías reales
+                    if (
+                        (filter === 'viajes' && (title.includes('viaje') || title.includes('aventura') || title.includes('escapada'))) ||
+                        (filter === 'citas' && (title.includes('cena') || title.includes('romántica'))) ||
+                        (filter === 'celebraciones' && (title.includes('cumpleaños') || title.includes('navidad') || title.includes('año nuevo') || title.includes('aniversario'))) ||
+                        (filter === 'momentos especiales' && (title.includes('especial') || title.includes('juntos')))
+                    ) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Animación al cargar la página
+        const animateItems = () => {
+            photoItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('animate-zoomIn');
+                }, index * 100);
+            });
+        };
+        
+        window.addEventListener('load', animateItems);
+    </script>
+</body>
+</html>

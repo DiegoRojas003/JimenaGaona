@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Dania Jimena</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#8B5CF6',      // Violeta vibrante
+                        'primary-light': '#A78BFA', // Violeta claro
+                        'secondary': '#EC4899',     // Rosa vibrante
+                        'secondary-light': '#F9A8D4', // Rosa claro
+                        'accent': '#0EA5E9',        // Azul brillante
+                        'dark': '#1E293B',          // Azul oscuro/slate
+                        'light': '#F8FAFC'          // Blanco/slate muy claro
+                    },
+                    animation: {
+                        'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'fadeIn': 'fadeIn 1.5s ease-in-out',
+                    },
+                    keyframes: {
+                        heartbeat: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-pink-50 font-['Montserrat']">
+    <!-- Header moderno con navegación -->
+    <header class="relative">
+        <!-- Fondo con gradiente y efecto de cristal -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-90 backdrop-blur-md"></div>
+        
+        <!-- Barra de navegación moderna -->
+        <div class="relative container mx-auto px-4 pt-4">
+            <nav class="flex justify-end">
+                <div class="flex gap-8 backdrop-blur-sm bg-white/10 rounded-full px-6 py-2 shadow-lg">
+                    <a href="index.html" class="text-white font-medium hover:text-secondary-light transition-colors duration-300">Inicio</a>
+                    <!--{<a href="collage.html" class="text-white font-medium hover:text-secondary-light transition-colors duration-300">Collage</a>}-->
+                    
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Contenido del header -->
+        <div class="relative container mx-auto px-6 py-12 md:py-20 flex flex-col items-center">
+            <div class="text-center">
+                <h1 class="font-['Playfair_Display'] text-4xl md:text-6xl font-bold text-white mb-2 animate-heartbeat">
+                    Feliz Cumpleaños
+                </h1>
+                <h2 class="font-['Playfair_Display'] text-2xl md:text-3xl font-medium text-white/90 mb-4">
+                    Dania Jimena Gaona Villalba
+                </h2>
+                <p class="text-white/80 italic text-lg">La mujer más hermosa del mundo</p>
+            </div>
+            
+            <!-- Decoración -->
+            <div class="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        </div>
+    </header>
+
+    <!-- Sección principal -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Mensaje de felicitación -->
+        <section class="text-center mb-16 animate-fadeIn">
+            <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-primary mb-6">¡Feliz Cumpleaños mi amor!</h2>
+            <div class="bg-white/80 backdrop-blur-sm shadow-xl rounded-xl p-8 max-w-2xl mx-auto border border-secondary-light/20">
+                <p class="text-lg text-dark leading-relaxed">
+                    En este día tan especial, quiero celebrar cada momento junto a ti. Gracias por iluminar mi vida con tu sonrisa y por hacer de cada día una aventura maravillosa.
+                </p>
+            </div>
+        </section>
+
+        <!-- Carrusel de imágenes vertical -->
+        <div class="w-full flex justify-center items-center mb-16">
+            <div id="carousel" class="w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl">
+                <div class="carousel-inner relative w-full overflow-hidden">
+                    <div class="carousel-item active w-full text-center items-center">
+                        <div class="font-bold text-primary text-lg mb-1">Nuestro primer encuentro</div>
+                        <img src="img/img1.jpg" alt="Imagen 1" class="w-full h-[600px] object-cover object-center">
+                    </div>
+                    <div class="carousel-item w-full text-center items-center">
+                        <div class="font-bold text-secondary text-lg mb-1">Nuestra primera cita</div>
+                        <img src="img/img2.jpg" alt="Imagen 2" class="w-full h-[600px] object-cover object-center">
+                    </div>
+                    <div class="carousel-item w-full text-center items-center">
+                        <div class="font-bold text-accent text-lg mb-1">Nuestro primer beso</div>
+                        <img src="img/img3.jpg" alt="Imagen 3" class="w-full h-[600px] object-cover object-center">
+                    </div>
+                    <div class="carousel-item w-full text-center items-center">
+                        <div class="font-bold text-primary text-lg mb-1">Te pedí que fueras mi novia</div>
+                        <img src="img/img4.jpg" alt="Imagen 4" class="w-full h-[600px] object-cover object-center">
+                    </div>
+                    <div class="carousel-item w-full text-center items-center">
+                        <div class="font-bold text-secondary text-lg mb-1">Nuestro primer viaje juntos</div>
+                        <img src="img/img5.jpg" alt="Imagen 5" class="w-full h-[600px] object-cover object-center">
+                    </div>
+                    <div class="carousel-item w-full text-center items-center">
+                        <div class="font-bold text-accent text-lg mb-1">Tu cumpleaños pasado</div>
+                        <img src="img/img6.jpg" alt="Imagen 6" class="w-full h-[600px] object-cover object-center">
+                    </div>
+                    <div class="carousel-item w-full text-center items-center">
+                        <div class="font-bold text-primary text-lg mb-1">Nuestro viaje pasado</div>
+                        <img src="img/img7.jpg" alt="Imagen 7" class="w-full h-[600px] object-cover object-center">
+                    </div>
+                    <div class="carousel-item w-full text-center items-center">
+                        <div class="font-bold text-secondary text-lg mb-1">Nuestras fiestas</div>
+                        <img src="img/im8.jpg" alt="Imagen 8" class="w-full h-[600px] object-cover object-center">
+                    </div>
+                    <div class="carousel-item w-full text-center items-center">
+                        <div class="font-bold text-accent text-lg mb-1">Nuestro amor a la distancia</div>
+                        <img src="img/img9.jpg" alt="Imagen 9" class="w-full h-[600px] object-cover object-center">
+                    </div>
+                    <div class="carousel-item w-full text-center items-center">
+                        <div class="font-bold text-accent text-lg mb-1">Tu primer cumpleaños juntos</div>
+                        <img src="img/img10.jpg" alt="Imagen 10" class="w-full h-[600px] object-cover object-center">
+                    </div>
+                </div>
+                
+                <!-- Indicadores simples centrados -->
+                <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 flex-wrap px-4">
+                    <button onclick="showSlide(0)" class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-colors duration-300 hover:scale-125"></button>
+                    <button onclick="showSlide(1)" class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-colors duration-300 hover:scale-125"></button>
+                    <button onclick="showSlide(2)" class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-colors duration-300 hover:scale-125"></button>
+                    <button onclick="showSlide(3)" class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-colors duration-300 hover:scale-125"></button>
+                    <button onclick="showSlide(4)" class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-colors duration-300 hover:scale-125"></button>
+                    <button onclick="showSlide(5)" class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-colors duration-300 hover:scale-125"></button>
+                    <button onclick="showSlide(6)" class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-colors duration-300 hover:scale-125"></button>
+                    <button onclick="showSlide(7)" class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-colors duration-300 hover:scale-125"></button>
+                    <button onclick="showSlide(8)" class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-colors duration-300 hover:scale-125"></button>
+                    <button onclick="showSlide(9)" class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-colors duration-300 hover:scale-125"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjetas de razones con diseño moderno -->
+        <section class="mb-16">
+            <h2 class="font-['Playfair_Display'] text-2xl md:text-3xl font-bold text-center text-primary mb-10">Razones por las que te amo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-primary-light p-[2px] shadow-lg">
+                    <div class="absolute -inset-0 bg-gradient-to-r from-accent via-secondary to-primary opacity-30 blur transition duration-700 group-hover:opacity-100"></div>
+                    <div class="relative h-full w-full rounded-2xl bg-white p-6 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 rounded-full bg-primary text-white mr-3">❤️</div>
+                            <h3 class="text-xl font-bold text-primary">Tu sonrisa</h3>
+                        </div>
+                        <p class="text-dark/80">Ilumina mi mundo cada mañana y me hace querer acompañarte por siempre.</p>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 2 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-secondary to-secondary-light p-[2px] shadow-lg">
+                    <div class="absolute -inset-0 bg-gradient-to-r from-primary via-accent to-secondary opacity-30 blur transition duration-700 group-hover:opacity-100"></div>
+                    <div class="relative h-full w-full rounded-2xl bg-white p-6 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 rounded-full bg-secondary text-white mr-3">🌟</div>
+                            <h3 class="text-xl font-bold text-secondary">Tu corazón</h3>
+                        </div>
+                        <p class="text-dark/80">La bondad y el amor que compartes me inspiran a ser mejor cada día. Tu generosidad no conoce límites siempre has estado para mi.</p>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta 3 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-accent to-primary-light p-[2px] shadow-lg">
+                    <div class="absolute -inset-0 bg-gradient-to-r from-secondary via-primary to-accent opacity-30 blur transition duration-700 group-hover:opacity-100"></div>
+                    <div class="relative h-full w-full rounded-2xl bg-white p-6 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 rounded-full bg-accent text-white mr-3">✨</div>
+                            <h3 class="text-xl font-bold text-accent">Tu fortaleza</h3>
+                        </div>
+                        <p class="text-dark/80">Tu determinación es de admirar, ante cualquier obstaculo siempre sales adelante.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Línea de tiempo expandida -->
+        <section class="mb-20">
+            <h2 class="font-['Playfair_Display'] text-2xl md:text-3xl font-bold text-center text-primary mb-10">Nuestros hitos de amor</h2>
+            
+            <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary before:via-secondary before:to-accent">
+                <!-- Momento 1 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg border-2 border-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        ❤️
+                    </div>
+                    <div class="group-hover:-translate-y-1 transition-all duration-500 w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-lg">
+                        <div class="font-bold text-primary text-lg mb-1">Nuestro primer encuentro</div>
+                        <div class="text-dark/70">Ese día con curiosidad rondaba tu presencia con la curiosidad de conocer esa linda mujer</div>
+                        <div class="mt-2 text-secondary-light font-medium">Julio 6 2019</div>
+                    </div>
+                </div>
+                
+                <!-- Momento 2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-secondary to-accent shadow-lg border-2 border-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        🎁
+                    </div>
+                    <div class="group-hover:-translate-y-1 transition-all duration-500 w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-lg">
+                        <div class="font-bold text-secondary text-lg mb-1">Nuestra primera cita</div>
+                        <div class="text-dark/70">Cada minuto contigo fue mágico. Tu risa, tus ideas, tu forma de ver el mundo... todo me cautivó.</div>
+                        <div class="mt-2 text-secondary-light font-medium">Septiembre 30 2020</div>
+                    </div>
+                </div>
+                
+                <!-- Momento 3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary shadow-lg border-2 border-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        🌹
+                    </div>
+                    <div class="group-hover:-translate-y-1 transition-all duration-500 w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-lg">
+                        <div class="font-bold text-accent text-lg mb-1">Nuestro primer beso</div>
+                        <div class="text-dark/70">Ese instante en que nuestros labios se encontraron quedará para siempre grabado en mi corazón, y aunque no fue la forma que se lo esperaste sin quererlo marco historia en mi vida.</div>
+                        <div class="mt-2 text-secondary-light font-medium">Abril 2023</div>
+                    </div>
+                </div>
+                
+                <!-- Momento 4 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg border-2 border-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        🌟
+                    </div>
+                    <div class="group-hover:-translate-y-1 transition-all duration-500 w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-lg">
+                        <div class="font-bold text-primary text-lg mb-1">Te pedí que fueras mi novia</div>
+                        <div class="text-dark/70">Con nervios pero lleno de ilusión, te pregunté si querías ser mi compañera de vida. Tu "sí" me hizo el hombre más feliz.</div>
+                        <div class="mt-2 text-secondary-light font-medium">Mayo 2023</div>
+                    </div>
+                </div>
+                
+                <!-- Momento 5 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-secondary to-accent shadow-lg border-2 border-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        🏞️
+                    </div>
+                    <div class="group-hover:-translate-y-1 transition-all duration-500 w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-lg">
+                        <div class="font-bold text-secondary text-lg mb-1">Nuestro primer viaje juntos</div>
+                        <div class="text-dark/70">Salir contigo y tenerte a mi lado mientras observaba otros lugares me hizo pensar que te queria a mi lado mi Dania.</div>
+                        <div class="mt-2 text-secondary-light font-medium"></div>
+                    </div>
+                </div>
+                
+                <!-- Momento 6 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary shadow-lg border-2 border-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        🎂
+                    </div>
+                    <div class="group-hover:-translate-y-1 transition-all duration-500 w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-lg">
+                        <div class="font-bold text-accent text-lg mb-1">Tu cumpleaños pasado</div>
+                        <div class="text-dark/70">Celebrar tu vida es celebrar el mayor regalo que he recibido. Verte sonreír es mi mayor felicidad.</div>
+                        <div class="mt-2 text-secondary-light font-medium">Marzo 7 2023</div>
+                    </div>
+                </div>
+                
+                <!-- Momento 7 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg border-2 border-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        🎄
+                    </div>
+                    <div class="group-hover:-translate-y-1 transition-all duration-500 w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-lg">
+                        <div class="font-bold text-primary text-lg mb-1">Nuestro viaje pasado</div>
+                        <div class="text-dark/70">Compartir estas fechas especiales contigo hizo que todo brillara de una manera diferente. Tu amor es el mejor regalo.</div>
+                        <div class="mt-2 text-secondary-light font-medium">Agosto 4 2024</div>
+                    </div>
+                </div>
+                
+                <!-- Momento 8 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-secondary to-accent shadow-lg border-2 border-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        💐
+                    </div>
+                    <div class="group-hover:-translate-y-1 transition-all duration-500 w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-lg">
+                        <div class="font-bold text-secondary text-lg mb-1">Nuestras fiestas</div>
+                        <div class="text-dark/70"> Momentos a tu lado que me llenaron de alegrias y momentos unicos.</div>
+                        <div class="mt-2 text-secondary-light font-medium">Julio 1 2023</div>
+                    </div>
+                </div>
+                
+                <!-- Momento 9 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary shadow-lg border-2 border-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        🎉
+                    </div>
+                    <div class="group-hover:-translate-y-1 transition-all duration-500 w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-lg">
+                        <div class="font-bold text-accent text-lg mb-1">Nuestro amor a la distancia</div>
+                        <div class="text-dark/70">Ni la distancia ha logrado separar esos chistes anecdotas y alegrias que compartimos a kilometros de distancia por eso</div>
+                        <div class="mt-2 text-secondary-light font-medium">Te amo muchos</div>
+                    </div>
+                </div>
+                
+                <!-- Momento 10 (Futuro) -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg border-2 border-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        ✨
+                    </div>
+                    <div class="group-hover:-translate-y-1 transition-all duration-500 w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-xl shadow-lg">
+                        <div class="font-bold text-primary text-lg mb-1">Tu primer cumpleaños juntos</div>
+                        <div class="text-dark/70">Que hoy en tu cumpleaños seas feliz como el primer cumpleaños que compartimos juntos, porque quiero más cumpleaños estando contigo quiero cumpleaños a tu lado</div>
+                        <div class="mt-2 text-secondary-light font-medium">Para siempre...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+    </main>
+
+    <!-- Footer moderno -->
+    <footer class="relative mt-20">
+        <!-- Fondo con gradiente y efecto de cristal -->
+        <div class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-90"></div>
+        
+        <!-- Decoración -->
+        <div class="absolute -top-12 left-1/4 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute -top-6 right-1/3 w-24 h-24 bg-white/10 rounded-full blur-3xl"></div>
+        
+        <div class="relative container mx-auto px-6 py-12 text-center">
+            <div class="mb-6 inline-block p-3 bg-white/10 backdrop-blur-md rounded-full">
+                <div class="animate-heartbeat">❤️</div>
+            </div>
+            <p class="font-['Playfair_Display'] text-2xl font-bold text-white mb-3">Con todo mi amor para Dania Jimena</p>
+            <p class="text-white/80 max-w-md mx-auto">Cada día a tu lado es un regalo. Gracias por existir y por compartir tu vida conmigo. ¡Feliz cumpleaños!</p>
+            <div class="mt-8 text-white/60 text-sm">Hecho con amor para celebrar a la persona más especial</div>
+        </div>
+    </footer>
+
+    <!-- Script del carrusel optimizado -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.bottom-4 button');
+         
+        function showSlide(index) {
+            // Ocultar todas las diapositivas
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.display = 'none';
+            });
+            
+            // Actualizar el índice actual
+            currentSlide = (index + slides.length) % slides.length;
+            
+            // Mostrar la diapositiva actual
+            slides[currentSlide].classList.add('active');
+            slides[currentSlide].style.display = 'block';
+            
+            // Actualizar indicadores si existen
+            if (indicators.length > 0) {
+                indicators.forEach((indicator, i) => {
+                    if (i === currentSlide) {
+                        indicator.classList.add('bg-white');
+                        indicator.classList.remove('bg-white/70');
+                    } else {
+                        indicator.classList.add('bg-white/70');
+                        indicator.classList.remove('bg-white');
+                    }
+                });
+            }
+        }
+        
+        // Inicializar el carrusel
+        function initCarousel() {
+            // Ocultar todas las diapositivas excepto la primera
+            slides.forEach((slide, index) => {
+                if (index !== 0) {
+                    slide.style.display = 'none';
+                }
+            });
+            
+            // Activar el primer indicador si existen
+            if (indicators.length > 0 && indicators[0]) {
+                indicators[0].classList.add('bg-white');
+                indicators[0].classList.remove('bg-white/70');
+            }
+        }
+         
+        // Avanzar a la siguiente diapositiva
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Retroceder a la diapositiva anterior
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Inicializar el carrusel al cargar la página
+        document.addEventListener('DOMContentLoaded', initCarousel);
+
+        // Cambio automático de diapositivas cada 4 segundos
+        setInterval(() => {
+            nextSlide();
+        }, 4000);
+    </script>
+</body>
+</html>
